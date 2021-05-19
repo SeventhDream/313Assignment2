@@ -14,8 +14,8 @@ namespace Asgmt2
         
         // Declare struct
             public struct cell_FST { 
-            public int next_state;
-            public Action action;
+            public int next_state; // Index to the next state.
+            public Action action;  // Associated transition action.
         };
 
         // Declare constants for intialising FST array size.
@@ -25,21 +25,22 @@ namespace Asgmt2
 
         // Methods
 
-        // Access and update the indexed struct's "next state" field in FST array.
+        // Access and update the index to the next state in the indexed FST array position.
         private void SetNextState(int eventIndex, int stateIndex, int nextState) {
             FST[eventIndex, stateIndex].next_state = nextState;
         }
 
-        // Access and update the indexed struct's "Action" delegate field in FST array.
+        // Access and update the associated transistion action in the indexed FST array position.
         public void SetActions(int eventIndex, int stateIndex, Action nextAction) {
             FST[eventIndex, stateIndex].action = nextAction;
         }
 
-        // Access and return the indexed struct's "next state" field in FST array.
+        // Return the index to the next state in the indexed FST array position.
         public int GetNextState(int eventIndex, int stateIndex) {
            return FST[eventIndex, stateIndex].next_state;
         }
-        // Access and return the indexed struct's "Action" delegate field in FST array.
+
+        // Return the associated transistion action in the indexed FST array position.
         public Action GetActions(int eventIndex, int stateIndex) {
             return FST[eventIndex, stateIndex].action;
         }
